@@ -13,18 +13,18 @@ pub extern "C" fn _start() -> ! {
 
     runix::init();
 
-    x86_64::instructions::interrupts::int3();
+    // x86_64::instructions::interrupts::int3();
     #[cfg(test)]
     test_main();
     println!("It did not crash!");
-    loop {}
+    runix::hlt_loop();
 }
 
 #[cfg(not(test))]
 #[panic_handler]
 fn panic(_info: &PanicInfo) -> ! {
     println!("{}", _info);
-    loop {}
+    runix::hlt_loop();
 }
 
 #[cfg(test)]
