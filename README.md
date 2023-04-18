@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/kandapagari/runix/main)
+
 - Change to rust nightly to get access to unstable packages like `build-std` using:
     ```bash
     rustup override set nightly
